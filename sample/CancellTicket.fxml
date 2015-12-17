@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CancellController">
+   <children>
+      <TextField fx:id="customerName" layoutX="134.0" layoutY="80.0" prefHeight="25.0" prefWidth="253.0" />
+      <TextField fx:id="customerTicketPin" layoutX="134.0" layoutY="168.0" prefHeight="25.0" prefWidth="253.0" />
+      <TextField fx:id="customerMobile1" layoutX="134.0" layoutY="125.0" prefHeight="25.0" prefWidth="253.0" />
+      <Label layoutX="29.0" layoutY="80.0" text="Name" />
+      <Label layoutX="25.0" layoutY="125.0" text="Mobile Number" />
+      <Label layoutX="25.0" layoutY="172.0" text="Ticket Pin" />
+      <Button layoutX="201.0" layoutY="226.0" mnemonicParsing="false" onAction="#submitAction" text="Submit" />
+   </children>
+</Pane>

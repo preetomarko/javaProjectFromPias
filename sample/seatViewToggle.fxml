@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="211.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SeatViewController">
+   <children>
+      <ToggleButton fx:id="s1" layoutX="20.0" layoutY="69.0" mnemonicParsing="false" onAction="#s1Action" text="01" />
+      <ToggleButton fx:id="s2" layoutX="54.0" layoutY="69.0" mnemonicParsing="false" onAction="#s2Action" text="02" />
+      <ToggleButton fx:id="s4" layoutX="163.0" layoutY="69.0" mnemonicParsing="false" onAction="#s4Action" text="04" />
+      <ToggleButton fx:id="s3" layoutX="129.0" layoutY="69.0" mnemonicParsing="false" onAction="#s3Action" text="03" />
+      <ToggleButton fx:id="s6" layoutX="54.0" layoutY="105.0" mnemonicParsing="false" onAction="#s6Action" text="06" />
+      <ToggleButton fx:id="s7" layoutX="129.0" layoutY="105.0" mnemonicParsing="false" onAction="#s7Action" text="07" />
+      <ToggleButton fx:id="s5" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" onAction="#s5Action" text="05" />
+      <ToggleButton fx:id="s8" layoutX="163.0" layoutY="105.0" mnemonicParsing="false" onAction="#s8Action" text="08" />
+      <ToggleButton fx:id="s10" layoutX="54.0" layoutY="142.0" mnemonicParsing="false" onAction="#s10Action" text="10" />
+      <ToggleButton fx:id="s12" layoutX="163.0" layoutY="142.0" mnemonicParsing="false" onAction="#s12Action" text="12" />
+      <ToggleButton fx:id="s11" layoutX="129.0" layoutY="142.0" mnemonicParsing="false" onAction="#s11Action" text="11" />
+      <ToggleButton fx:id="s9" layoutX="20.0" layoutY="142.0" mnemonicParsing="false" onAction="#s9Action" text="09" />
+      <ToggleButton fx:id="s14" layoutX="54.0" layoutY="179.0" mnemonicParsing="false" onAction="#s14Action" text="14" />
+      <ToggleButton fx:id="s15" layoutX="129.0" layoutY="179.0" mnemonicParsing="false" onAction="#s15Action" text="15" />
+      <ToggleButton fx:id="s13" layoutX="20.0" layoutY="179.0" mnemonicParsing="false" onAction="#s13Action" text="13" />
+      <ToggleButton fx:id="s16" layoutX="163.0" layoutY="179.0" mnemonicParsing="false" onAction="#s16Action" text="16" />
+      <ToggleButton fx:id="s20" layoutX="163.0" layoutY="217.0" mnemonicParsing="false" onAction="#s20Action" text="20" />
+      <ToggleButton fx:id="s17" layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#s17Action" text="17" />
+      <ToggleButton fx:id="s19" layoutX="129.0" layoutY="217.0" mnemonicParsing="false" onAction="#s19Action" text="19" />
+      <ToggleButton fx:id="s18" layoutX="54.0" layoutY="217.0" mnemonicParsing="false" onAction="#s18Action" text="18" />
+      <ToggleButton fx:id="s22" layoutX="54.0" layoutY="253.0" mnemonicParsing="false" onAction="#s22Action" text="22" />
+      <ToggleButton fx:id="s24" layoutX="163.0" layoutY="253.0" mnemonicParsing="false" onAction="#s24Action" text="24" />
+      <ToggleButton fx:id="s21" layoutX="20.0" layoutY="253.0" mnemonicParsing="false" onAction="#s21Action" text="21" />
+      <ToggleButton fx:id="s23" layoutX="129.0" layoutY="253.0" mnemonicParsing="false" onAction="#s23Action" text="23" />
+      <ToggleButton fx:id="s25" layoutX="20.0" layoutY="288.0" mnemonicParsing="false" onAction="#s25Action" text="25" />
+      <ToggleButton fx:id="s28" layoutX="163.0" layoutY="288.0" mnemonicParsing="false" onAction="#s28Action" text="28" />
+      <ToggleButton fx:id="s26" layoutX="54.0" layoutY="288.0" mnemonicParsing="false" onAction="#s26Action" text="26" />
+      <ToggleButton fx:id="s27" layoutX="129.0" layoutY="288.0" mnemonicParsing="false" onAction="#s27Action" text="27" />
+      <ToggleButton fx:id="s30" layoutX="54.0" layoutY="323.0" mnemonicParsing="false" onAction="#s30Action" text="30" />
+      <ToggleButton fx:id="s31" layoutX="129.0" layoutY="323.0" mnemonicParsing="false" onAction="#s31Action" text="31" />
+      <ToggleButton fx:id="s32" layoutX="163.0" layoutY="323.0" mnemonicParsing="false" onAction="#s32Action" text="32" />
+      <ToggleButton fx:id="s29" layoutX="20.0" layoutY="323.0" mnemonicParsing="false" onAction="#s29Action" text="29" />
+      <ToggleButton fx:id="s36" layoutX="163.0" layoutY="358.0" mnemonicParsing="false" onAction="#s37Action" text="36" />
+      <ToggleButton fx:id="s33" layoutX="20.0" layoutY="358.0" mnemonicParsing="false" onAction="#s33Action" text="33" />
+      <ToggleButton fx:id="s34" layoutX="54.0" layoutY="358.0" mnemonicParsing="false" onAction="#s34Action" text="34" />
+      <ToggleButton fx:id="s35" layoutX="129.0" layoutY="358.0" mnemonicParsing="false" onAction="#s35Action" text="35" />
+      <ToggleButton fx:id="s39" layoutX="129.0" layoutY="392.0" mnemonicParsing="false" onAction="#s39Action" text="39" />
+      <ToggleButton fx:id="s38" layoutX="54.0" layoutY="392.0" mnemonicParsing="false" onAction="#s38Action" text="38" />
+      <ToggleButton fx:id="s37" layoutX="20.0" layoutY="392.0" mnemonicParsing="false" onAction="#s37Action" text="37" />
+      <ToggleButton fx:id="s40" layoutX="163.0" layoutY="392.0" mnemonicParsing="false" onAction="#s40Action" text="40" />
+      <Label layoutX="138.0" layoutY="24.0" text="DRIVER" />
+      <Button layoutX="83.0" layoutY="444.0" mnemonicParsing="false" onAction="#seatSubmit" text="Button" />
+   </children>
+</Pane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.availableBusTableviewController">
+   <children>
+      <TableView layoutX="12.0" layoutY="121.0" prefHeight="208.0" prefWidth="623.0">
+        <columns>
+          <TableColumn fx:id="dateColumn" prefWidth="89.0" text="Date" />
+            <TableColumn fx:id="departureTimeColumn" prefWidth="110.0" text="Time of departure" />
+          <TableColumn fx:id="fromColumn" prefWidth="86.0" text="From" />
+            <TableColumn fx:id="toColumn" prefWidth="84.0" text="To" />
+            <TableColumn fx:id="ACnonAC_column" prefWidth="78.0" text="AC/ Non-AC" />
+            <TableColumn fx:id="availableSeatsColumn" prefWidth="91.0" text="Available Seats" />
+            <TableColumn fx:id="farePerSeatColumn" prefWidth="84.0" text="Fare per seat" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
