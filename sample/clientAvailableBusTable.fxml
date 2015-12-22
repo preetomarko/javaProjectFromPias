@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.availableBusTableviewController">
    <children>
-      <TableView layoutX="12.0" layoutY="121.0" prefHeight="208.0" prefWidth="623.0">
+      <TableView fx:id="tableView" layoutX="12.0" layoutY="121.0" prefHeight="208.0" prefWidth="623.0">
         <columns>
           <TableColumn fx:id="dateColumn" prefWidth="89.0" text="Date" />
             <TableColumn fx:id="departureTimeColumn" prefWidth="110.0" text="Time of departure" />

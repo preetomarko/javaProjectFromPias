@@ -31,7 +31,7 @@ public class ShowTicketDBController {
         this.main = main;
 
 
-        Image image = new Image(sample.Main.class.getResourceAsStream("select.jpg"));
+        Image image = new Image(Main.class.getResourceAsStream("select.jpg"));
         selectImage.setImage(image);
     }
 }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.homepageController">
+   <children>
+      <Label layoutX="577.0" layoutY="18.0" text="Admin Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Group layoutY="15.0" AnchorPane.bottomAnchor="477.0" AnchorPane.rightAnchor="56.4921875" AnchorPane.topAnchor="66.0">
+         <children>
+            <TextField fx:id="adminUserID" layoutX="545.0" layoutY="51.0" onAction="#adminUserIDtakeAction" promptText="enter your user ID here" />
+            <Label layoutX="471.0" layoutY="87.0" text="Password" />
+            <Label layoutX="471.0" layoutY="55.0" text="User ID" />
+            <PasswordField fx:id="adminPassword" layoutX="545.0" layoutY="83.0" onAction="#adminPasswordTakeAction" promptText="enter password" />
+         </children>
+      </Group>
+      <Label layoutX="548.0" layoutY="43.0" text="(for authorized persons only)">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <VBox layoutX="23.0" layoutY="224.0" prefHeight="293.0" prefWidth="201.0" spacing="8.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="526.0" AnchorPane.topAnchor="224.0">
+         <children>
+            <Label text="BUY TICKET">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" startX="-100.0" />
+            <Label text="From" />
+            <ComboBox fx:id="fromComboBox" onAction="#fromComboBoxAction" prefHeight="25.0" prefWidth="129.0" />
+            <Label text="To" />
+            <ComboBox fx:id="toComboBox" onAction="#toComboBoxAction" prefHeight="25.0" prefWidth="130.0" />
+            <Label text="Departing on" />
+            <DatePicker fx:id="datePick" onAction="#datePickAction" />
+            <Label text="Coach type" />
+            <RadioButton fx:id="ACradioButton" mnemonicParsing="false" onAction="#ACradioButtonClick" text="AC" />
+            <RadioButton fx:id="nonACradioButton" mnemonicParsing="false" onAction="#nonACradioButtonClick" text="Non-AC" />
+         </children>
+         <opaqueInsets>
+            <Insets top="10.0" />
+         </opaqueInsets>
+      </VBox>
+      <Label layoutX="520.0" layoutY="492.0" text="We accept" />
+      <Label layoutX="335.0" layoutY="224.0" text="ABOUT US">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="bkash" fitHeight="57.0" fitWidth="79.0" layoutX="514.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bkash.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sureCash" fitHeight="49.0" fitWidth="70.0" layoutX="595.0" layoutY="508.0">
+         <image>
+            <Image url="@sure%20cash.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="DBBL" fitHeight="57.0" fitWidth="60.0" layoutX="666.0" layoutY="507.0">
+         <image>
+            <Image url="@dutch%20bangla.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="masterCard" fitHeight="48.0" fitWidth="77.0" layoutX="513.0" layoutY="561.0">
+         <image>
+            <Image url="@mastercard.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="visa" fitHeight="48.0" fitWidth="70.0" layoutX="596.0" layoutY="562.0">
+         <image>
+            <Image url="@visa.PNG" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="436.0" layoutY="254.0" startX="-100.0" />
+      <Button fx:id="tktSearch" layoutX="53.0" layoutY="532.0" mnemonicParsing="false" onAction="#searchTktButton" text="Search" />
+      <Label fx:id="alert" layoutX="23.0" layoutY="564.0" text="You haven't filled all the required fields" textFill="#e80606" visible="false">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TabPane fx:id="menuTabPane" layoutX="17.0" layoutY="175.0" prefHeight="25.0" prefWidth="680.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="homeMenu" text="      Home      ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab fx:id="buyTktMenu" text="      Buy Ticket      ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab fx:id="cancelTktMenu" text="     Cancel Booked Ticket     ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="availableRouteMenu" text="     See Available Routes      ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="FAQmenu" text="      FAQ      ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="creditsMenu" text="     Credits     ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="adminLoginButton" layoutX="582.0" layoutY="137.0" mnemonicParsing="false" onAction="#adminLoginAction" text="Login" />
+   </children>
+</AnchorPane>

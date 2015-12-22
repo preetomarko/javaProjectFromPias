@@ -83,7 +83,7 @@ public class PersonalController {
         customerEmail.setOnAction(e -> email = customerEmail.getText());
         customerName.setOnAction(e-> name = customerName.getText());
 
-        Image image3 = new Image(sample.Main.class.getResourceAsStream("submitButton.png"));
+        Image image3 = new Image(Main.class.getResourceAsStream("submitButton.png"));
         customerInfoSubmission.setGraphic(new ImageView(image3));
 
 
@@ -124,10 +124,10 @@ public class PersonalController {
         this.main = main;
 
 
-        Image imagepersonal = new Image(sample.Main.class.getResourceAsStream("safeTravel.jpg"));
+        Image imagepersonal = new Image(Main.class.getResourceAsStream("safeTravel.jpg"));
         personalInfoImage.setImage(imagepersonal);
 
-        Image imagepersonal2 = new Image(sample.Main.class.getResourceAsStream("personalInfo2.jpg"));
+        Image imagepersonal2 = new Image(Main.class.getResourceAsStream("personalInfo2.jpg"));
         personalInfoImage2.setImage(imagepersonal2);
     }
 

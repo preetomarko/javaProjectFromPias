@@ -9,16 +9,16 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.util.Callback;
 
 import java.sql.ResultSet;
-import java.util.Scanner;
+import java.time.LocalDate;
 
 public class AdminController {
 
+
     @FXML
-    private TextField ID;
+    private Label ID;
 
     @FXML
     private Button Cancel;
@@ -45,18 +45,6 @@ public class AdminController {
     private ComboBox<String> departingTime;
 
     private Main main;
-
-
-    /*
-    id int primary key,
-    staringStation varchar(30),
-    destination varchar(30),
-    fare varchar(30),
-    state varchar(30),
-    workingDate date,
-    seat int,
-    startingTime varchar(30)
-    */
     private int idDB;
     private String staringStationDB;
     private String destinationDB;
@@ -69,7 +57,6 @@ public class AdminController {
     @FXML
     void SubmitAction(ActionEvent event) {
 
-        idDB = Integer.parseInt(ID.getText());
         staringStationDB = startingStation.getValue();
         destinationDB = destination.getValue();
         fareDB = fare.getValue();
@@ -79,42 +66,14 @@ public class AdminController {
         timeDB = departingTime.getValue();
 
 
-
-
         MySQLConnect oc=new MySQLConnect("localhost","person","root","quantumraj");
-        try
-        {
-            String query = "select * from BusFinal2";
-            ResultSet rs = oc.searchDB(query);
-            System.out.println("Product List");
-            System.out.println("Id	Name	Price	Description");
-            while(rs.next())
-            {
-                System.out.print(rs.getInt("id"));
-                System.out.print("	");
-                System.out.print(rs.getString("staringStation"));
-                System.out.print("	");
-                System.out.print(rs.getString("fare"));
-                System.out.print("	");
-                System.out.println(rs.getString("destination"));
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println("Exception in listProducts: " + e);
-        }
-
-
-
-
-        //MySQLConnect oc=new MySQLConnect("localhost","bus","root","quantumraj");
         try
         {
             String query = String.format("select * from BusFinal2 where id = %d", idDB);
             ResultSet rs = oc.searchDB(query);
             if(rs.next())
             {
-                System.out.println("Product with this Id already exisits");
+                System.out.println("Bus with this Id already exisits");
             }
             else
             {
@@ -133,10 +92,6 @@ public class AdminController {
             oc.close();
         }
     }
-
-
-
-
 
 
     public  void initialize() {
@@ -161,16 +116,39 @@ public class AdminController {
         seatNumber.setTooltip(new Tooltip("Seat Number"));
 
 
-        departingTime.setPromptText("Departing Time");
+        departingTime.setPromptText("24 hour format");
         departingTime.setItems(FXCollections.observableArrayList("6", "8", "10", "12", "14", "16", "18", "20", "22", "0"));
         departingTime.setTooltip(new Tooltip("Departing Time"));
 
-        fare.setPromptText("Fare");
+        //fare.setPromptText("Fare");
         fare.setItems(FXCollections.observableArrayList("450", "500", "550", "600", "700", "800", "850", "950", "1000", "1250"));
         fare.setTooltip(new Tooltip("Fare"));
+
+        SearchMaxDBId searchMaxDBId = new SearchMaxDBId();
+        idDB = searchMaxDBId.getMaxBusID();
+        idDB++;
+        ID.setText(""+idDB);
+
+        final Callback<DatePicker, DateCell> dayCellFactory =
+                new Callback<DatePicker, DateCell>() {
+                    @Override
+                    public DateCell call(final DatePicker datePicker) {
+                        return new DateCell() {
+                            @Override
+                            public void updateItem(LocalDate item, boolean empty) {
+                                super.updateItem(item, empty);
+
+                                if (item.isBefore(LocalDate.now())) {
+                                    setDisable(true);
+                                    setStyle("-fx-background-color: #ffc0cb;");
+                                }
+                            }
+                        };
+                    }
+                };
+        date.setDayCellFactory(dayCellFactory);
+        date.setEditable(false);
     }
-
-
 
 
     public void setMain(Main main) {

@@ -8,12 +8,12 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Callback;
+
+import java.time.LocalDate;
 
 public class SearchTicketController {
 
@@ -62,8 +62,28 @@ public class SearchTicketController {
         //datePicker.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         datePicker.setTooltip(new Tooltip("Enter your desired Date"));
 
-        Image image3 = new Image(sample.Main.class.getResourceAsStream("searchBus.jpg"));
+        Image image3 = new Image(Main.class.getResourceAsStream("searchBus.jpg"));
         searchTicket.setGraphic(new ImageView(image3));
+
+        final Callback<DatePicker, DateCell> dayCellFactory =
+                new Callback<DatePicker, DateCell>() {
+                    @Override
+                    public DateCell call(final DatePicker datePicker) {
+                        return new DateCell() {
+                            @Override
+                            public void updateItem(LocalDate item, boolean empty) {
+                                super.updateItem(item, empty);
+
+                                if (item.isBefore(LocalDate.now())) {
+                                    setDisable(true);
+                                    setStyle("-fx-background-color: #ffc0cb;");
+                                }
+                            }
+                        };
+                    }
+                };
+        datePicker.setDayCellFactory(dayCellFactory);
+        datePicker.setEditable(false);
     }
 
     @FXML
@@ -94,10 +114,10 @@ public class SearchTicketController {
     public void setMain(Main main) {
         this.main = main;
 
-        Image image = new Image(sample.Main.class.getResourceAsStream("busPic.png"));
+        Image image = new Image(Main.class.getResourceAsStream("busPic.png"));
         imageView.setImage(image);
 
-        Image img2 = new Image(sample.Main.class.getResourceAsStream("busPic2.png"));
+        Image img2 = new Image(Main.class.getResourceAsStream("busPic2.png"));
         image2.setImage(img2);
     }
 }

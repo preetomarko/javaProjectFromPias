@@ -13,10 +13,14 @@ public class tableViewRow {
     private SimpleStringProperty acNonAC;
     private Integer availableSeats;
     private SimpleStringProperty fare;
+    /*
     public tableViewRow()
     {
 
     }
+    */
+
+
     public tableViewRow(String d,String tod,String f,String t,String acNac,int as,String fr)
     {
         date=new SimpleStringProperty(d);
@@ -27,6 +31,7 @@ public class tableViewRow {
         availableSeats=as;
         fare=new SimpleStringProperty(fr);
     }
+
 
     public String getDate()  {return date.get();}
     public String getTimeOfDeparture()  {return timeOfDeparture.get();}
@@ -43,6 +48,11 @@ public class tableViewRow {
     public void setAcNonAC(String acNac) {acNonAC.set(acNac);}
     public void setAvailableSeats(int avs) {availableSeats=avs;}
     public void setFare(String fr) {fare.set(fr);}
+
+    public String toString()
+    {
+        return "date: "+date+", time of departure: "+timeOfDeparture+", from: "+from+", to: "+to+", type: "+acNonAC+'\n'+"available seats: "+availableSeats+", fare: "+fare;
+    }
 
 
 }
